@@ -64,18 +64,17 @@ const ContactDetailsPage = () => {
   return (
     <>
       <MoveLeftIcon
-        size={48}
-        className="inline-block ml-2 p-1 sm:p-2 text-stone-800"
+        size={36}
+        className="inline-block ml-2 p-2 sm:p-1 text-stone-800"
         onClick={() => navigate("/contacts")}
       />
-      <div className="space-y-6 bg-white shadow-md mx-auto p-6 rounded-2xl max-w-2xl">
+      <div className="space-y-6 bg-white shadow-md mx-auto p-6 rounded-2xl max-w-[300px] overflow-auto">
         <div className="flex items-center gap-6">
-          <div className="flex justify-center items-center bg-gray-100 rounded-full w-20 h-20 overflow-hidden">
+          <div className="bg-gray-100 p-2 rounded-full">
             <User className="text-gray-400" size={36} />
           </div>
-
           <div>
-            <h1 className="font-bold text-gray-800 text-2xl">
+            <h1 className="font-bold text-gray-800 text-xl sm:text-balance text-pretty">
               {contact.username}
             </h1>
           </div>
