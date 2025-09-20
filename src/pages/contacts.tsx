@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import { ContactList } from "../components/custom/contact";
-import { Navbar } from "../components/custom/navbar";
 import { SearchBox } from "../components/custom/search-box";
 import type { ContactType } from "../types/company";
 
