@@ -58,10 +58,10 @@ function ContactsPage() {
   }
 
   return (
-    <>
+    <div className="flex flex-col gap-4">
       <SearchBox onSearch={handleSearch} />
       <ContactList contacts={visibleContacts} loading={loading} />
-    </>
+    </div>
   );
 }
 

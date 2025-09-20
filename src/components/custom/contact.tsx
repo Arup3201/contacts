@@ -21,7 +21,7 @@ const ContactList: React.FC<ContactListProps> = ({ contacts, loading }) => {
   }
 
   return (
-    <ol className="flex flex-col gap-2 mx-1">
+    <ol className="flex flex-col gap-2 mx-4 sm:mx-auto sm:w-[640px]">
       {contacts.map((contact) => (
         <li>
           <ContactListItem contact={contact} onClick={handleClick} />
