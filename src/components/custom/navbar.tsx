@@ -28,7 +28,7 @@ const Navbar = () => {
               setActive(option);
               navigate(option.value);
             }}
-            className={option.value === active.value ? "" : "text-gray-400"}
+            className={option.value === active.value ? "cursor-pointer" : "cursor-pointer text-gray-400"}
           >
             {option.name}
           </li>
