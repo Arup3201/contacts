@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import type { ContactType } from "../../types/company";
 import { User } from "lucide-react";
 
@@ -7,8 +8,10 @@ interface ContactListProps {
 }
 
 const ContactList: React.FC<ContactListProps> = ({ contacts, loading }) => {
+  const navigate = useNavigate();
+
   function handleClick(contactId: number) {
-    console.log(contactId);
+    navigate(`/contacts/${contactId}`);
   }
 
   if (loading) {
