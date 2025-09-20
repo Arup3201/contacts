@@ -20,16 +20,52 @@ const ContactList: React.FC<ContactListProps> = ({ contacts, loading }) => {
     );
   }
 
+  const grouped = groupContactsByFirstLetter(contacts);
+
   return (
     <ol className="flex flex-col gap-2 mx-4 sm:mx-auto sm:w-[640px]">
-      {contacts.map((contact) => (
-        <li>
-          <ContactListItem contact={contact} onClick={handleClick} />
-        </li>
+      {Object.entries(grouped).map(([letter, contacts]) => (
+        <div key={letter} className="mb-6">
+          <h2 className="bg-stone-400 mb-2 p-2 font-bold text-gray-200 text-md">{letter}</h2>
+          <div className="space-y-2">
+            {contacts.map((contact) => (
+              <li>
+                <ContactListItem contact={contact} onClick={handleClick} />
+              </li>
+            ))}
+          </div>
+        </div>
       ))}
     </ol>
   );
 };
+
+function groupContactsByFirstLetter(contacts: ContactType[]) {
+  const groups: Record<string, ContactType[]> = {};
+
+  contacts.forEach((contact) => {
+    const firstLetter = contact.username.charAt(0).toUpperCase();
+
+    if (!groups[firstLetter]) {
+      groups[firstLetter] = [];
+    }
+
+    groups[firstLetter].push(contact);
+  });
+
+  // Optional: sort each group’s contacts alphabetically
+  Object.keys(groups).forEach((letter) => {
+    groups[letter].sort((a, b) => a.username.localeCompare(b.username));
+  });
+
+  // Return sorted groups (A-Z)
+  return Object.keys(groups)
+    .sort()
+    .reduce((acc, key) => {
+      acc[key] = groups[key];
+      return acc;
+    }, {} as Record<string, ContactType[]>);
+}
 
 interface ContactListItemProps {
   contact: ContactType;

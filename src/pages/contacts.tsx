@@ -22,6 +22,7 @@ function ContactsPage() {
 
       const data = await response.json();
       setContacts(data);
+      setVisibleContacts(data);
     } catch (err) {
       console.error("Fetch contacts failed, ", err);
     } finally {
@@ -32,18 +33,6 @@ function ContactsPage() {
   useEffect(() => {
     fetchContacts();
   }, []);
-
-  useEffect(() => {
-    setVisibleContacts(
-      contacts.sort((ca, cb) => {
-        const cau = ca.username.toLowerCase();
-        const cbu = cb.username.toLowerCase();
-        if (cau < cbu) return -1;
-        else if (cau > cbu) return 1;
-        else return 0;
-      })
-    );
-  }, [contacts]);
 
   function handleSearch(query: string) {
     if (!query) {
