@@ -68,10 +68,10 @@ const ContactDetailsPage = () => {
         className="inline-block ml-2 p-2 sm:p-1 text-stone-800"
         onClick={() => navigate("/contacts")}
       />
-      <div className="space-y-6 bg-white shadow-md mx-auto p-6 rounded-2xl max-w-[300px] overflow-auto">
+      <div className="space-y-6 bg-white shadow-md mx-auto p-6 rounded-2xl max-w-[300px] sm:max-w-[640px] overflow-auto">
         <div className="flex items-center gap-6">
           <div className="bg-gray-100 p-2 rounded-full">
-            <User className="text-gray-400" size={36} />
+            <User className="text-stone-400" size={36} />
           </div>
           <div>
             <h1 className="font-bold text-gray-800 text-xl sm:text-balance text-pretty">
@@ -81,15 +81,15 @@ const ContactDetailsPage = () => {
         </div>
 
         <div className="space-y-3">
-          <div className="flex items-center gap-3 text-gray-700">
+          <div className="flex items-center gap-3 text-stone-800">
             <Mail size={18} className="text-blue-500" />
             <span>{contact.email}</span>
           </div>
-          <div className="flex items-center gap-3 text-gray-700">
+          <div className="flex items-center gap-3 text-stone-800">
             <Phone size={18} className="text-green-500" />
             <span>{contact.phone}</span>
           </div>
-          <div className="flex items-center gap-3 text-gray-700">
+          <div className="flex items-center gap-3 text-stone-800">
             <Globe size={18} className="text-purple-500" />
             <a
               href={`https://${contact.website}`}
@@ -103,20 +103,20 @@ const ContactDetailsPage = () => {
         </div>
 
         <div className="pt-4 border-t">
-          <h2 className="flex items-center gap-2 font-semibold text-gray-800 text-lg">
+          <h2 className="flex items-center gap-2 font-semibold text-stone-800 text-lg">
             <Building2 size={20} className="text-orange-500" /> Company
           </h2>
           <p className="mt-1 font-medium">{contact.company.name}</p>
-          <p className="text-gray-500 text-sm italic">
+          <p className="text-stone-500 text-sm italic">
             “{contact.company.catchPhrase}”
           </p>
         </div>
 
         <div className="pt-4 border-t">
-          <h2 className="flex items-center gap-2 font-semibold text-gray-800 text-lg">
+          <h2 className="flex items-center gap-2 font-semibold text-stone-800 text-lg">
             <MapPin size={20} className="text-red-500" /> Address
           </h2>
-          <p className="mt-1 text-gray-600">
+          <p className="mt-1 text-stone-500">
             {contact.address.suite}, {contact.address.street},{" "}
             {contact.address.city}, {contact.address.zip}
           </p>

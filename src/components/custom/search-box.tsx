@@ -22,7 +22,7 @@ const SearchBox: React.FC<SearchBoxProps> = ({
     <div className="mx-4 mt-2">
       <div className="relative">
         <Search
-          className="top-1/2 left-3 absolute text-gray-400 -translate-y-1/2 transform"
+          className="top-1/2 left-3 absolute text-stone-400 -translate-y-1/2 transform"
           size={18}
         />
 

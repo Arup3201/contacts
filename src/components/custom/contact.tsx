@@ -16,7 +16,7 @@ const ContactList: React.FC<ContactListProps> = ({ contacts, loading }) => {
 
   if (loading) {
     return (
-      <p className="mt-4 text-gray-400 text-center">Fetching contacts...</p>
+      <p className="mt-4 text-stone-400 text-center">Fetching contacts...</p>
     );
   }
 
@@ -86,9 +86,9 @@ const ContactListItem: React.FC<ContactListItemProps> = ({
       </div>
 
       <div className="flex flex-col">
-        <span className="font-semibold text-gray-800">{contact.username}</span>
-        <span className="text-gray-500 text-sm">{contact.email}</span>
-        <span className="text-gray-400 text-xs">{contact.address.city}</span>
+        <span className="font-semibold text-stone-800">{contact.username}</span>
+        <span className="text-stone-400 text-sm">{contact.email}</span>
+        <span className="text-stone-400 text-xs">{contact.address.city}</span>
       </div>
     </div>
   );
