@@ -64,8 +64,8 @@ const ContactDetailsPage = () => {
   return (
     <>
       <MoveLeftIcon
-        size={24}
-        className="inline-block shadow-sm shadow-stone-400 ml-2 p-1 rounded-md text-stone-800"
+        size={48}
+        className="inline-block ml-2 p-1 sm:p-2 text-stone-800"
         onClick={() => navigate("/contacts")}
       />
       <div className="space-y-6 bg-white shadow-md mx-auto p-6 rounded-2xl max-w-2xl">
